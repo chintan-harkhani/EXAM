@@ -5,7 +5,7 @@ const CreateOrder = async (reqBody) =>{
 };
 
 const OrderList = async (req ,res) =>{
-    return OrderModel.find().populate("product")
+    return OrderModel.find().populate("product", {product_name:1 ,product_img:1,product_price:1})
 }
 
 const OrderId  =async (orderId) =>{
